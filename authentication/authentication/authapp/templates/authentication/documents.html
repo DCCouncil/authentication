@@ -1,10 +1,13 @@
 {% extends "authentication/_base.html" %}
 {% load static %}
 
-{% block body %}
+{% block extra_css %}
   <link href="{{ STATIC_URL }}authentication/DataTables-1.10.0/media/css/jquery.dataTables.css" rel="stylesheet">
   <script src="{{ STATIC_URL }}authentication/DataTables-1.10.0/media/js/jquery.dataTables.min.js"></script>
   <link href="{{ STATIC_URL }}authentication/css/document.css" rel="stylesheet">
+  {% endblock %}
+
+{% block body %}
 
   <h1> Check the Hash Values for Documents </h1>
   <table name="documents" id="documents">

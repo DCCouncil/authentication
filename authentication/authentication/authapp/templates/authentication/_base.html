@@ -3,17 +3,46 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <link href="{% static 'authentication/css/dropzone.css' %}" type="text/css" rel="stylesheet"/>
-  <link href="{{ STATIC_URL }}authentication/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+  <title>{% block title %}DC Council DataSeal{% endblock %}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+  <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/static/authentication/css/main.css">
+  <link rel="stylesheet" href="/static/css/sticky-footer.css">
+
+  <link href="{{ STATIC_URL }}authentication/css/dropzone.css" type="text/css" rel="stylesheet"/>
   <link href="{{ STATIC_URL }}authentication/css/starter-template.css" rel="stylesheet">
   <script src="{{ STATIC_URL }}authentication/js/jquery-1.11.1.min.js"></script>
   <script src="{{ STATIC_URL }}authentication/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 
-  <title>{% block title %}DC Council DataSeal{% endblock %}</title>
-</head>
+  {% block opengraph %}
+  <meta property="og:title" content="DC Statutes at Large">
+  <meta property="og:site_name" content="District of Columbia Statutes at Large">
+  <meta property="og:url" content="https://dcstat.dccode.gov">
+  <meta property="og:description" content="The DC Statutes at Large includes, in chronological order, all Council acts and resolutions that became law during a Council period.">
+  <meta property="og:image" content="https://dccode.gov/static/images/seal.png">
 
-<body>
+  <!-- Twitter Metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@councilofdc" />
+  <meta name="twitter:title" content="District of Columbia Statutes at Large" />
+  <meta name="twitter:description" content="The DC Statutes at Large includes, in chronological order, all Council acts and resolutions that became law during a Council period." />
+  <meta name="twitter:image" content="https://dccode.gov/static/images/seal.png" />
+  <meta name="twitter:url" content="https://dcstat.dccode.gov/" />
+  {% endblock %}
 
+  {% block extra_css %}
+  {% endblock %}
+
+    <script src="/static/js/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -56,11 +85,27 @@
     </div><!--/.nav-collapse -->
     
   </div>
-</div>
+</div>    
+    <div class="jumbotron">
+      <div class="container">
+        <h1><a href="/">DC Council DataSeal</a></h1>
+        <p>The home of the official District of Columbia Statutes at Large.</p>
+        <div style="margin-top: 1.5em">
+          <a class="btn btn-primary" href="https://dcstat.dccode.gov">DC Statutes at Large &raquo;</a>
+        </div>
+      </div>
+    </div>
 
-<div class="container">
-  {% block body %}{% endblock %}
-</div><!-- /.container -->
+    <div class="container">
+{% block body %}
 
+{% endblock %}
+    </div>
+    <footer class="footer">
+        <div class="container text-center">
+        All content contained on this site is available in the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public Domain</a>. 
+        </div>
+    </footer>
+ {% block extra_js %}{% endblock %}
 </body>
 </html>
