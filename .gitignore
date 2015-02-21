@@ -62,3 +62,4 @@ authentication/local_settings.py
 *.swp
 
 *.asc
+runscript
