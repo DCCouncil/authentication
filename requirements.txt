@@ -27,6 +27,6 @@ requests==2.2.1
 six==1.4.1
 static3==0.5.1
 ujson==1.33
-urllib3==1.7.1
+urllib3==1.26.5
 wsgiref==0.1.2
 yubico-client==1.9.1
